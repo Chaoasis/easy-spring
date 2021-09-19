@@ -9,10 +9,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UserService {
 
-    private String name;
+    private String uId;
+
+    private UserDao userDao;
 
     public void queryUserInfo() {
-        System.out.println("查询用户信息：" + name);
+        System.out.println("查询用户信息：" + userDao.queryUserName(uId));
     }
 
 }
