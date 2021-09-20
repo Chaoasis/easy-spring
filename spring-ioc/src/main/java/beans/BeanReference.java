@@ -1,4 +1,4 @@
-package factory.config;
+package beans;
 
 import lombok.Data;
 import lombok.Getter;

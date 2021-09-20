@@ -1,4 +1,4 @@
-package factory.support.property;
+package beans.property;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,6 +1,4 @@
-package factory.support;
-
-import factory.config.SingletonBeanRegistry;
+package support.single;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package factory.config;
+package support.single;
 
 /**
  * 单例接口

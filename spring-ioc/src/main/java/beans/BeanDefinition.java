@@ -1,6 +1,6 @@
-package factory.config;
+package beans;
 
-import factory.support.property.PropertyValues;
+import beans.property.PropertyValues;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;

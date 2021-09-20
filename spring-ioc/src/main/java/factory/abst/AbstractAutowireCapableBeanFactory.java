@@ -1,13 +1,13 @@
-package factory.support;
+package factory.abst;
 
+import beans.BeanDefinition;
+import beans.BeanReference;
+import beans.property.PropertyValue;
+import beans.property.PropertyValues;
 import cn.hutool.core.bean.BeanUtil;
-import factory.config.BeanDefinition;
-import factory.config.BeanReference;
-import factory.config.BeansException;
-import factory.support.instant.CglibSubclassingInstantiationStrategy;
-import factory.support.instant.InstantiationStrategy;
-import factory.support.property.PropertyValue;
-import factory.support.property.PropertyValues;
+import config.BeansException;
+import support.instant.CglibSubclassingInstantiationStrategy;
+import support.instant.InstantiationStrategy;
 
 import java.lang.reflect.Constructor;
 

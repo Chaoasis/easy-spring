@@ -1,4 +1,4 @@
-package factory.config;
+package config;
 
 public class BeansException extends RuntimeException {
 

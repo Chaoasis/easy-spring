@@ -1,7 +1,7 @@
-package factory.support.instant;
+package support.instant;
 
-import factory.config.BeanDefinition;
-import factory.config.BeansException;
+import beans.BeanDefinition;
+import config.BeansException;
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.NoOp;
 

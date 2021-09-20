@@ -1,13 +1,23 @@
 import bean.UserDao;
 import bean.UserService;
-import factory.config.BeanDefinition;
-import factory.config.BeanReference;
-import factory.support.DefaultListableBeanFactory;
-import factory.support.property.PropertyValue;
-import factory.support.property.PropertyValues;
+import beans.BeanDefinition;
+import beans.BeanReference;
+import beans.property.PropertyValue;
+import beans.property.PropertyValues;
+import cn.hutool.core.io.IoUtil;
+import core.io.Resource;
+import core.io.impl.DefaultResourceLoader;
+import factory.impl.DefaultListableBeanFactory;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import support.reader.XmlBeanDefinitionReader;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 public class ApiTest {
+    private DefaultResourceLoader resourceLoader;
+
     @Test
     public void test_BeanFactory() {
         // 1.初始化 BeanFactory
@@ -27,6 +37,43 @@ public class ApiTest {
 
         // 5. UserService 获取bean
         UserService userService = (UserService) beanFactory.getBean("userService");
-        userService.queryUserInfo();
+        String result = userService.queryUserInfo();
+        System.out.println("测试结果：" + result);
+    }
+
+    @BeforeEach
+    public void init() {
+        resourceLoader = new DefaultResourceLoader();
+    }
+
+    @Test
+    public void test_classpath() throws IOException {
+        Resource resource = resourceLoader.getResource("classpath:important.properties");
+        InputStream inputStream = resource.getInputStream();
+        String content = IoUtil.readUtf8(inputStream);
+        System.out.println(content);
+    }
+
+    @Test
+    public void test_file() throws IOException {
+        Resource resource = resourceLoader.getResource("src/test/resources/important.properties");
+        InputStream inputStream = resource.getInputStream();
+        String content = IoUtil.readUtf8(inputStream);
+        System.out.println(content);
+    }
+
+    @Test
+    public void test_xml() {
+        // 1.初始化 BeanFactory
+        DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
+
+        // 2. 读取配置文件&注册Bean
+        XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(beanFactory);
+        reader.loadBeanDefinitions("classpath:spring.xml");
+
+        // 3. 获取Bean对象调用方法
+        UserService userService = beanFactory.getBean("userService", UserService.class);
+        String result = userService.queryUserInfo();
+        System.out.println("测试结果：" + result);
     }
 }

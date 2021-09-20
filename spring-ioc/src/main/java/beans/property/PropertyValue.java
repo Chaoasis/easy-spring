@@ -1,4 +1,4 @@
-package factory.support.property;
+package beans.property;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
