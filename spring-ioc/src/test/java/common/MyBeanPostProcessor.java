@@ -2,7 +2,7 @@ package common;
 
 import bean.UserService;
 import config.BeansException;
-import context.BeanPostProcessor;
+import context.processor.BeanPostProcessor;
 
 public class MyBeanPostProcessor implements BeanPostProcessor {
 

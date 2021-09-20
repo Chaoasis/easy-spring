@@ -4,7 +4,7 @@ import beans.BeanDefinition;
 import beans.property.PropertyValue;
 import beans.property.PropertyValues;
 import config.BeansException;
-import context.BeanFactoryPostProcessor;
+import context.processor.BeanFactoryPostProcessor;
 import factory.ConfigurableListableBeanFactory;
 
 public class MyBeanFactoryPostProcessor implements BeanFactoryPostProcessor {

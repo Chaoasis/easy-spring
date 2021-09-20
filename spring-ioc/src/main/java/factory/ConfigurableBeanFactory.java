@@ -1,6 +1,6 @@
 package factory;
 
-import context.BeanPostProcessor;
+import context.processor.BeanPostProcessor;
 import support.single.SingletonBeanRegistry;
 
 public interface ConfigurableBeanFactory extends HierarchicalBeanFactory, SingletonBeanRegistry {

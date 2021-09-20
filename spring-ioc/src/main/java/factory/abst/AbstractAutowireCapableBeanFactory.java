@@ -6,8 +6,12 @@ import beans.property.PropertyValues;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.StrUtil;
 import config.BeansException;
-import context.BeanPostProcessor;
+import context.processor.BeanPostProcessor;
 import factory.AutowireCapableBeanFactory;
+import support.aware.Aware;
+import support.aware.BeanClassLoaderAware;
+import support.aware.BeanFactoryAware;
+import support.aware.BeanNameAware;
 import support.instant.CglibSubclassingInstantiationStrategy;
 import support.instant.InstantiationStrategy;
 
@@ -94,6 +98,20 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
     }
 
     private Object initializeBean(String beanName, Object bean, BeanDefinition beanDefinition) {
+
+        // invokeAwareMethods
+        if (bean instanceof Aware) {
+            if (bean instanceof BeanFactoryAware) {
+                ((BeanFactoryAware) bean).setBeanFactory(this);
+            }
+            if (bean instanceof BeanClassLoaderAware) {
+                ((BeanClassLoaderAware) bean).setBeanClassLoader(getBeanClassLoader());
+            }
+            if (bean instanceof BeanNameAware) {
+                ((BeanNameAware) bean).setBeanName(beanName);
+            }
+        }
+
         // 1. 执行 BeanPostProcessor Before 处理
         Object wrappedBean = applyBeanPostProcessorsBeforeInitialization(bean, beanName);
 

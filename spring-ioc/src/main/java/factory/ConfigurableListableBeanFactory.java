@@ -2,7 +2,7 @@ package factory;
 
 import beans.BeanDefinition;
 import config.BeansException;
-import context.BeanPostProcessor;
+import context.processor.BeanPostProcessor;
 
 /**
  * 获取beanDefinition
