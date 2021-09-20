@@ -4,6 +4,10 @@ import config.BeansException;
 
 import java.util.Map;
 
+/**
+ * 通过class判断,提起生成存在的Bean
+ * 获取所有BeanDefinition
+ */
 public interface ListableBeanFactory extends BeanFactory {
 
     /**

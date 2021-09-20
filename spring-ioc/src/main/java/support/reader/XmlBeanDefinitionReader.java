@@ -16,6 +16,11 @@ import support.registry.BeanDefinitionRegistry;
 import java.io.IOException;
 import java.io.InputStream;
 
+/**
+ * 把加载的bean信息转换成Resource
+ * 之后读取xml,生成beanDefinition
+ * 注册进BeanDefinition容器中
+ */
 public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 
     public XmlBeanDefinitionReader(BeanDefinitionRegistry registry) {
@@ -49,6 +54,13 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
         ResourceLoader resourceLoader = getResourceLoader();
         Resource resource = resourceLoader.getResource(location);
         loadBeanDefinitions(resource);
+    }
+
+    @Override
+    public void loadBeanDefinitions(String... locations) throws BeansException {
+        for (String location : locations) {
+            loadBeanDefinitions(location);
+        }
     }
 
     protected void doLoadBeanDefinitions(InputStream inputStream) throws ClassNotFoundException {
