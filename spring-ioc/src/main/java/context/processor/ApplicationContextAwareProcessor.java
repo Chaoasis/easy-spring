@@ -4,6 +4,9 @@ import config.BeansException;
 import context.ApplicationContext;
 import support.aware.ApplicationContextAware;
 
+/**
+ * 会给所有继承了当前类的类提供applicationContext上下文
+ */
 public class ApplicationContextAwareProcessor implements BeanPostProcessor {
 
     private final ApplicationContext applicationContext;

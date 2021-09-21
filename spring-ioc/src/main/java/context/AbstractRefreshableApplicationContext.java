@@ -4,6 +4,10 @@ import config.BeansException;
 import factory.ConfigurableListableBeanFactory;
 import factory.impl.DefaultListableBeanFactory;
 
+/**
+ * AbstractApplicationContext的子类,实现相关部分功能
+ * 创建Factory以及加载相关的BeanDefinition信息的行为
+ */
 public abstract class AbstractRefreshableApplicationContext extends AbstractApplicationContext {
 
     private DefaultListableBeanFactory beanFactory;

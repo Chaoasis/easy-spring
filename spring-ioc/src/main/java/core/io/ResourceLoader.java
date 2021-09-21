@@ -1,5 +1,8 @@
 package core.io;
 
+/**
+ * 返回相关的Resource
+ */
 public interface ResourceLoader {
 
     /**

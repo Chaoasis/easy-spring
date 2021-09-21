@@ -2,6 +2,9 @@ package factory;
 
 import config.BeansException;
 
+/**
+ * 定义了执行Process的方法
+ */
 public interface AutowireCapableBeanFactory extends BeanFactory {
 
     /**

@@ -2,7 +2,9 @@ package context.processor;
 
 import config.BeansException;
 import factory.ConfigurableListableBeanFactory;
-
+/**
+ * Bean处理器,提前实例化相关的Bean,并会在合适的时机调用相关的方法
+ */
 public interface BeanFactoryPostProcessor {
 
     /**

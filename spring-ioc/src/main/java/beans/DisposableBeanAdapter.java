@@ -5,6 +5,9 @@ import config.BeansException;
 
 import java.lang.reflect.Method;
 
+/**
+ * 适配器,处理实现接口和指定方法的两种情况
+ */
 public class DisposableBeanAdapter implements DisposableBean {
 
     private final Object bean;

@@ -20,7 +20,7 @@ import java.lang.reflect.Method;
 
 /**
  * 创建Bean的相关功能
- * 在创建bean前后执行BeanProcessor
+ * 在创建bean前后执行BeanProcessor,aware等相关功能
  */
 public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFactory implements AutowireCapableBeanFactory {
 
@@ -44,7 +44,7 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 
         // 判断 SCOPE_SINGLETON、SCOPE_PROTOTYPE
         if (beanDefinition.isSingleton()) {
-            addSingleton(beanName, bean);
+            registerSingleton(beanName, bean);
         }
         return bean;
     }

@@ -2,6 +2,9 @@ package context;
 
 import config.BeansException;
 
+/**
+ * 提供refresh功能
+ */
 public interface ConfigurableApplicationContext extends ApplicationContext {
 
     /**

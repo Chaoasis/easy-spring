@@ -3,6 +3,9 @@ package context;
 import factory.impl.DefaultListableBeanFactory;
 import support.reader.XmlBeanDefinitionReader;
 
+/**
+ * 子类,提供加载BeanDefinition功能
+ */
 public abstract class AbstractXmlApplicationContext extends AbstractRefreshableApplicationContext {
 
     @Override

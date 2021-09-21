@@ -1,5 +1,8 @@
 package beans;
 
+/**
+ * 初始化方法
+ */
 public interface InitializingBean {
 
     /**

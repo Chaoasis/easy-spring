@@ -3,6 +3,9 @@ package beans.property;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 存放属性的容器
+ */
 public class PropertyValues {
 
     private final List<PropertyValue> propertyValueList = new ArrayList<>();

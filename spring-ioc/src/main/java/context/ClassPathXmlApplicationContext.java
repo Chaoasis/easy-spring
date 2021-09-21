@@ -2,6 +2,9 @@ package context;
 
 import config.BeansException;
 
+/**
+ * 对外暴露的实现类
+ */
 public class ClassPathXmlApplicationContext extends AbstractXmlApplicationContext {
 
     private String[] configLocations;
