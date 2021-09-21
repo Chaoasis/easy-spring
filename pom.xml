@@ -11,6 +11,7 @@
     <!--子项目-->
     <modules>
         <module>spring-ioc</module>
+        <module>spring-aop</module>
     </modules>
     <!--标签-->
     <dependencyManagement>
