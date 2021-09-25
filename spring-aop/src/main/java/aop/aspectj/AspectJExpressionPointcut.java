@@ -13,6 +13,7 @@ import java.util.Set;
 
 /**
  * 使用org.aspectj.weaver完成匹配功能
+ * 目前是通过传入接入点表达式提供判断功能
  */
 public class AspectJExpressionPointcut implements Pointcut, ClassFilter, MethodMatcher {
 

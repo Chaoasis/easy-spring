@@ -1,4 +1,4 @@
-package aop.farmework;
+package aop.framework;
 
 /**
  * 获取代理类

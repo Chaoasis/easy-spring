@@ -1,4 +1,4 @@
-package aop.farmework;
+package aop.framework;
 
 import org.aopalliance.intercept.MethodInvocation;
 

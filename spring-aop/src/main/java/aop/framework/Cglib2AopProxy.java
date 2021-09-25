@@ -1,4 +1,4 @@
-package aop.farmework;
+package aop.framework;
 
 import aop.AdvisedSupport;
 import net.sf.cglib.proxy.Enhancer;
