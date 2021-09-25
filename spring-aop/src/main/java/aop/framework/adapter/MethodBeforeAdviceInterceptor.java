@@ -2,6 +2,7 @@ package aop.framework.adapter;
 
 import aop.advice.MethodBeforeAdvice;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
@@ -13,6 +14,7 @@ import org.aopalliance.intercept.MethodInvocation;
  */
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 public class MethodBeforeAdviceInterceptor implements MethodInterceptor {
 
     private MethodBeforeAdvice advice;
