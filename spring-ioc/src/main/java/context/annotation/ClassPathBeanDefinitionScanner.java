@@ -2,6 +2,7 @@ package context.annotation;
 
 import beans.BeanDefinition;
 import cn.hutool.core.util.StrUtil;
+import context.processor.AutowiredAnnotationBeanPostProcessor;
 import support.registry.BeanDefinitionRegistry;
 
 import java.util.Set;
@@ -32,6 +33,7 @@ public class ClassPathBeanDefinitionScanner extends ClassPathScanningCandidateCo
                 registry.registerBeanDefinition(determineBeanName(beanDefinition), beanDefinition);
             }
         }
+        registry.registerBeanDefinition( "autowiredAnnotationBeanPostProcessor",new BeanDefinition(AutowiredAnnotationBeanPostProcessor.class));
     }
 
     private String resolveBeanScope(BeanDefinition beanDefinition) {

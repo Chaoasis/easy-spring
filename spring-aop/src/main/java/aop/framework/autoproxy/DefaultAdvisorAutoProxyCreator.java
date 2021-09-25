@@ -7,6 +7,7 @@ import aop.TargetSource;
 import aop.advice.Advisor;
 import aop.aspectj.AspectJExpressionPointcutAdvisor;
 import aop.framework.ProxyFactory;
+import beans.property.PropertyValues;
 import config.BeansException;
 import context.processor.InstantiationAwareBeanPostProcessor;
 import factory.BeanFactory;
@@ -36,10 +37,9 @@ public class DefaultAdvisorAutoProxyCreator implements InstantiationAwareBeanPos
     public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException {
 
         if (isInfrastructureClass(beanClass)) return null;
-        //获取匹配器
+
         Collection<AspectJExpressionPointcutAdvisor> advisors = beanFactory.getBeansOfType(AspectJExpressionPointcutAdvisor.class).values();
 
-        //这里把Bean替换成代理的Bean了.
         for (AspectJExpressionPointcutAdvisor advisor : advisors) {
             ClassFilter classFilter = advisor.getPointcut().getClassFilter();
             if (!classFilter.matches(beanClass)) continue;
@@ -77,5 +77,10 @@ public class DefaultAdvisorAutoProxyCreator implements InstantiationAwareBeanPos
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         return bean;
     }
-    
+
+    @Override
+    public PropertyValues postProcessPropertyValues(PropertyValues pvs, Object bean, String beanName) throws BeansException {
+        return pvs;
+    }
+
 }
