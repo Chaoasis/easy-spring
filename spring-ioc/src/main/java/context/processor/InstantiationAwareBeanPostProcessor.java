@@ -1,6 +1,6 @@
-package ioc.context.processor;
+package context.processor;
 
-import ioc.config.BeansException;
+import config.BeansException;
 
 public interface InstantiationAwareBeanPostProcessor extends BeanPostProcessor {
 

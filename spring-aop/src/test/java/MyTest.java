@@ -11,7 +11,7 @@ import bean.IUserService;
 import bean.UserService;
 import bean.UserServiceBeforeAdvice;
 import bean.UserServiceInterceptor;
-import ioc.context.ClassPathXmlApplicationContext;
+import context.ClassPathXmlApplicationContext;
 import org.aopalliance.intercept.MethodInterceptor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

@@ -7,13 +7,13 @@ import aop.TargetSource;
 import aop.advice.Advisor;
 import aop.aspectj.AspectJExpressionPointcutAdvisor;
 import aop.framework.ProxyFactory;
-import ioc.config.BeansException;
-import ioc.context.processor.InstantiationAwareBeanPostProcessor;
-import ioc.factory.BeanFactory;
-import ioc.factory.impl.DefaultListableBeanFactory;
-import ioc.support.aware.BeanFactoryAware;
+import config.BeansException;
+import context.processor.InstantiationAwareBeanPostProcessor;
+import factory.BeanFactory;
+import factory.impl.DefaultListableBeanFactory;
 import org.aopalliance.aop.Advice;
 import org.aopalliance.intercept.MethodInterceptor;
+import support.aware.BeanFactoryAware;
 
 import java.util.Collection;
 
