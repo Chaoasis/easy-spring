@@ -2,8 +2,8 @@
 <beans>
 <bean class="event.ContextRefreshedEventListener"/>
 
-<bean class="event.CustomEventListener"/>
+    <bean class="event.CustomEventListener"/>
 
-<bean class="event.ContextClosedEventListener"/>
+    <bean class="event.ContextClosedEventListener"/>
 
 </beans>
